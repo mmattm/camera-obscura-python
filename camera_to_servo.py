@@ -9,7 +9,7 @@ import base64
 import requests
 import json
 
-import RPi.GPIO as GPIO
+# import RPi.GPIO as GPIO
 import pigpio
 import time
 
@@ -17,6 +17,7 @@ import time
 # Activer dans le terminal la 1ère fois: $ sudo pigpio
 servo = 18
 pwm = pigpio.pi()
+pwm.set_mode(4, pigpio.INPUT)
 pwm.set_mode(servo, pigpio.OUTPUT)
 pwm.set_PWM_frequency(servo, 50)
 
